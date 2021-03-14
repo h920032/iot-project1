@@ -1,0 +1,12 @@
+{
+  "name": "iotproject",
+  "displayName": "iotproject",
+  "expo": {
+    "name": "iotproject",
+    "slug": "iotproject",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
