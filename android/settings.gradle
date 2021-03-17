@@ -1,4 +1,10 @@
 rootProject.name = 'iotproject'
+include ':react-native-webview'
+project(':react-native-webview').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-webview/android')
+include ':react-native-youtube'
+project(':react-native-youtube').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-youtube/android')
+include ':react-native-live-stream'
+project(':react-native-live-stream').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-live-stream/android')
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()
