@@ -7,6 +7,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.ntuforestry.soundofpollution",
+      "buildNumber": "1.0.6",
+      "supportsTablet": true
+    }
   }
+  
 }
