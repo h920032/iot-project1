@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 
 function DoorControl() {
@@ -22,6 +22,24 @@ function DoorControl() {
                 // console.log(data.access);
         });
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            fetch('http://120.124.28.38:30000/door',
+            {
+                method: 'GET',
+            }
+            )
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log(data.is_on);
+                setDoorOne(data.is_on[0]);
+                setDoorTwo(data.is_on[1]);
+                // console.log(data.access);
+            });
+        }, 1000);
+        return () => clearInterval(interval);
+      }, []);
 
     return (
     <View style={styles.container}>

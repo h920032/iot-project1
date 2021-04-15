@@ -20,6 +20,7 @@ void loop() {
     if ('a' == msg)
     {
       digitalWrite(2, LOW);
+      door1open = false;
       Serial.println("1 is close");    
     }
 //delay(1000);:
@@ -33,6 +34,7 @@ void loop() {
     else if('c' == msg)
     {
       digitalWrite(3, LOW);
+      door2open = false;
       Serial.println("2 is close");
     }
     else if('d' == msg)
@@ -83,20 +85,24 @@ void loop() {
     digitalWrite(2, HIGH);
     door1time = millis();
     door1open = true;
-    Serial.println("1 is open");
+    // Serial.println("1 is open");
   }
-  if (digitalRead(5) == 1)
+  if (digitalRead(6) == 0 && digitalRead(4) != 1)
   {
-    digitalWrite(2, HIGH);
-    door1time = millis();
-    door1open = true;
-    Serial.println("1 is open");
+    // digitalWrite(3, HIGH);
+    // door2time = millis();
+    // door2open = true;
+    // digitalWrite(2, LOW);
+    // door1open = false;
+    Serial.println("1 is close");
   }
-  if (digitalRead(6) == 1)
+  if (digitalRead(6) == 1 && digitalRead(4) != 1)
   {
-    digitalWrite(3, HIGH);
-    door2time = millis();
-    door2open = true;
-    Serial.println("2 is open");
+    // digitalWrite(3, HIGH);
+    // door2time = millis();
+    // door2open = true;
+    // digitalWrite(2, LOW);
+    // door1open = false;
+    Serial.println("1 is open");
   }
 }
